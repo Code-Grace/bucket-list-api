@@ -1,10 +1,10 @@
 'use strict';
 
 const bcrypt = require('bcrypt');
-const ose = require('ose');
-const uniqueValidator = require('ose-unique-validator');
+const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
-const userSchema = new ose.Schema({
+const userSchema = new mongoose.Schema({
   userName: {
     type: String,
     unique: true,
@@ -76,6 +76,6 @@ userSchema.methods.setPassword = function (password) {
   });
 };
 
-const User = ose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
