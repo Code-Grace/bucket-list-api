@@ -2,7 +2,7 @@
   "debug": {
     "options": {
       "web-port": 8080,
-      "web-host": "localhost",
+      "web-host": "127.0.0.1",
       "debug-port": 5858,
       "save-live-edit": true,
       "stack-trace-limit": 20,
