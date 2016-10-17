@@ -6,8 +6,8 @@ let uri;
 if (process.env.NODE_ENV === 'production') {
   uri = process.env.MONGODB_URI;
 } else {
-  uri = 'mongodb://localhost/bucket-list-api';
-} 
+  uri = 'mongodb://127.0.0.1/bucket-list-api';
+}
 
 mongoose.Promise = global.Promise;
 mongoose.connect(uri);
