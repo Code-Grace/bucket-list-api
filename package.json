@@ -15,12 +15,8 @@
     "cors": "^2.7.1",
     "debug": "~2.2.0",
     "dotenv": "^2.0.0",
-<<<<<<< d5ef390840851363ccbbfabe257ef3e364d75112
-    "express": "~4.13.4",
-=======
-    "express": "^4.13.4",
+    "express": "^4.14.0",
     "mongodb": "^2.2.10",
->>>>>>> change client_origin. add express to package.json
     "mongoose": "^4.4.6",
     "mongoose-unique-validator": "^1.0.2",
     "morgan": "~1.6.1",
