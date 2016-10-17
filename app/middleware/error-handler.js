@@ -1,6 +1,6 @@
 'use strict';
 
-const debug = require('debug')('express-template:error-handler');
+const debug = require('debug')('bucket-list-api:error-handler');
 
 const errorHandler = (err, req, res, next) => {
   //jshint unused:false

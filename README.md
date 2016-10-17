@@ -27,7 +27,7 @@ Fix any conflicts.
 1.  Unzip and rename the template directory.
 1.  Empty [`README.md`](README.md) and fill with your own content.
 1.  Move into the new project and `git init`.
-1.  Replace all instances of `'express-template'` with your app name. This
+1.  Replace all instances of `'bucket-list-api'` with your app name. This
     includes `package.json`, various debugger configurations, and the MongoDB
     store.
 1.  Install dependencies with `npm install`.
