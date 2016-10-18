@@ -26,7 +26,7 @@ curl --include --request POST https://deathbucket.herokuapp.com/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "userName": "h@example.email",
+      "userName": "d@example.email",
       "yearOfBirth": "1993",
       "password": "1"
     }
