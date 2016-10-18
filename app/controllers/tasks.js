@@ -9,7 +9,7 @@ const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
   // let tasks = { '_owner': req.currentUser._id };
-  Task.find({ '_owner': req.currentUser._id })
+  Task.find({ _owner: req.currentUser._id, completed: true })
     .then(tasks => res.json({ tasks }))
     .catch(err => next(err));
 };
