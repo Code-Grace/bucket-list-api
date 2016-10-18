@@ -18,8 +18,9 @@ module.exports = require('lib/wiring/routes')
 .resources('users', { only: ['index', 'show'] })
 
 // all routes created
-.resources('tasks', { only: ['index', 'show'] })
+// .resources('tasks', { only: ['index', 'show'] })
 .post('/tasks', 'tasks#create')
 .delete('/tasks/:id', 'tasks#destroy')
 .patch('/tasks/:id', 'tasks#update')
+.get('/tasks', 'tasks#index')
 ;
