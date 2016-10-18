@@ -14,7 +14,7 @@ const taskSchema = new mongoose.Schema({
   completed: {
     type: Boolean,
     default: false,
-    required: true,
+    // required: true,
   },
   _owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -23,7 +23,7 @@ const taskSchema = new mongoose.Schema({
   },
 }, {
   timestamps: true,
-  toJSON: { virtuals: true },
+  // toJSON: { virtuals: true },
 });
 
 const Task = mongoose.model('Task', taskSchema);
