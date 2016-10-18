@@ -19,3 +19,5 @@ curl --include --request POST http://127.0.0.1:3000/sign-up \
       "password": "123"
     }
   }'
+
+curl --include --request GET https://deathbucket.herokuapp.com/
