@@ -9,11 +9,7 @@ const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
   // let tasks = { '_owner': req.currentUser._id };
-  let tasks = { '_owner': { $in: [
-    mongoose.Types.ObjectId(req.currentUser._id)
-  ]}
-}
-  Task.find(tasks)
+  Task.find({ _owner: { $oid: req.currentUser._id}})
     .then(tasks => res.json({ tasks }))
     .catch(err => next(err));
 };
