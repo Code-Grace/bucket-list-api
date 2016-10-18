@@ -1,7 +1,7 @@
 # task GET index curl test
 
 curl --include --request GET http://localhost:3000/tasks \
-  --header "Authorization: Token token=bFfzn1Kfq5ZS/7MlMv+mHzM0c4SjhPKau2NnZ7mwbxk=--0zj+tfuySGG7tFLFnuzgYJ598QfbvEZgEssNLKkbQIA=" \
+  --header "Authorization: Token token=81uFm+iG9bfczR5a8z225EECmEt4GEDE8udeLPfqg8o=--k5giMQPRgyQ2pHB53CbWeu8ahREe3rFRp+wTxE0dAe0=" \
 
 # task GET show curl test
 
