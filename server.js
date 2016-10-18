@@ -1,8 +1,7 @@
 'use strict';
-// require('dotenv').load({
-//   silent: process.env.NODE_ENV === 'production', // don't log missing .env
-// });
-require('dotenv').config({path: __dirname + '/.env'});
+require('dotenv').load({
+  silent: process.env.NODE_ENV === 'production', // don't log missing .env
+});
 
 
 const express = require('express');
