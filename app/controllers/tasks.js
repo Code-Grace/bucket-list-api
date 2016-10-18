@@ -2,41 +2,41 @@
 
 const controller = require('lib/wiring/controller');
 const models = require('app/models');
-const List = models.list;
+const Task = models.tasks;
 
 const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
-  List.find()
-    .then(lists => res.json({ lists }))
+  Task.find()
+    .then(tasks => res.json({ tasks }))
     .catch(err => next(err));
 };
 
 const show = (req, res, next) => {
-  List.findById(req.params.id)
-    .then(list => list ? res.json({ list }) : next())
+  Task.findById(req.params.id)
+    .then(tasks => tasks ? res.json({ tasks }) : next())
     .catch(err => next(err));
 };
 
 const create = (req, res, next) => {
-  let list = Object.assign(req.body.list, {
+  let tasks = Object.assign(req.body.tasks, {
     _owner: req.currentUser._id,
   });
-  List.create(list)
-    .then(list => res.json({ list }))
+  Task.create(tasks)
+    .then(tasks => res.json({ tasks }))
     .catch(err => next(err));
 };
 
 const update = (req, res, next) => {
   let search = { _id: req.params.id, _owner: req.currentUser._id };
-  List.findOne(search)
-    .then(list => {
-      if (!list) {
+  Task.findOne(search)
+    .then(tasks => {
+      if (!tasks) {
         return next();
       }
 
       delete req.body._owner;  // disallow owner reassignment.
-      return list.update(req.body.list)
+      return tasks.update(req.body.tasks)
         .then(() => res.sendStatus(200));
     })
     .catch(err => next(err));
@@ -44,13 +44,13 @@ const update = (req, res, next) => {
 
 const destroy = (req, res, next) => {
   let search = { _id: req.params.id, _owner: req.currentUser._id };
-  List.findOne(search)
-    .then(list => {
-      if (!list) {
+  Task.findOne(search)
+    .then(tasks => {
+      if (!tasks) {
         return next();
       }
 
-      return list.remove()
+      return tasks.remove()
         .then(() => res.sendStatus(200));
     })
     .catch(err => next(err));
