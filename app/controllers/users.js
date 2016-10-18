@@ -48,7 +48,7 @@ const makeErrorHandler = (res, next) =>
 
 const signup = (req, res, next) => {
   let credentials = req.body.credentials;
-  let user = { userName: credentials.userName, password: credentials.password };
+  let user = { userName: credentials.userName, yearOfBirth: credentials.yearOfBirth, password: credentials.password };
   getToken().then(token =>
     user.token = token
   ).then(() =>
