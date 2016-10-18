@@ -7,13 +7,17 @@ const Task = models.task;
 const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
-  Task.find()
+  let tasks = Object.assign(req.body.tasks, {
+    _owner: req.currentUser._id,
+  });
+  Task.find(tasks)
     .then(tasks => res.json({ tasks }))
     .catch(err => next(err));
 };
 
 const show = (req, res, next) => {
-  Task.findById(req.params.id)
+  let search = { _id: req.params.id, _owner: req.currentUser._id };
+  Task.findById(search)
     .then(tasks => tasks ? res.json({ tasks }) : next())
     .catch(err => next(err));
 };
