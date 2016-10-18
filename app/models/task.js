@@ -13,6 +13,7 @@ const taskSchema = new mongoose.Schema({
   },
   completed: {
     type: Boolean,
+    default: false,
     required: true,
   },
   _owner: {
@@ -23,10 +24,6 @@ const taskSchema = new mongoose.Schema({
 }, {
   timestamps: true,
   toJSON: { virtuals: true },
-});
-
-taskSchema.virtual('length').get(function length() {
-  return this.text.length;
 });
 
 const Task = mongoose.model('Task', taskSchema);

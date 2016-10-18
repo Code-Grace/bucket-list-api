@@ -2,7 +2,7 @@
 
 const controller = require('lib/wiring/controller');
 const models = require('app/models');
-const Task = models.tasks;
+const Task = models.task;
 
 const authenticate = require('./concerns/authenticate');
 

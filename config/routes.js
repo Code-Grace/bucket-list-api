@@ -20,4 +20,6 @@ module.exports = require('lib/wiring/routes')
 // all routes created
 .resources('tasks', { only: ['index', 'show'] })
 .post('/tasks', 'tasks#create')
+.delete('/tasks/:id', 'tasks#destroy')
+.patch('/tasks/:id', 'tasks#update')
 ;
