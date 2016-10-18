@@ -8,8 +8,8 @@ const Task = models.task;
 const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
-  let tasks = { _id: req.currentUser._id };
-  Task.find(tasks)
+  let queryParams = { _id: req.currentUser._id };
+  Task.find(queryParams)
     .then(tasks => res.json({ tasks }))
     .catch(err => next(err));
 };
