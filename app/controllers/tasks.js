@@ -8,7 +8,7 @@ const Task = models.task;
 const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
-  Task.find({ _owner: { $eq: req.currentUser._id }})
+  Task.find({})
     .then((tasks) => {
       return res.json({ tasks });
     })
@@ -67,5 +67,5 @@ module.exports = controller({
   update,
   destroy,
 }, { before: [
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: ['show'] },
 ], });
