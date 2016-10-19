@@ -10,7 +10,7 @@ const cors = require('cors');
 const loader = require('lib/wiring/loader');
 
 const corsOptions = {
-  origin: process.env.CLIENT_ORIGIN || 'http://127.0.0.1:7165',
+  origin: process.env.CLIENT_ORIGIN || 'http://localhost:7165',
 };
 
 const before = (app) => {
