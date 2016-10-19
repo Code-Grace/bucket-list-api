@@ -8,7 +8,7 @@ const Task = models.task;
 const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
-  Task.find({ _owner: req.currentUser._id })
+  Task.find({ _owner: { $eq: req.currentUser._id }})
     .then(tasks => res.json({ tasks }))
     .catch(err => next(err));
 };
