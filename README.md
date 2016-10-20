@@ -2,6 +2,9 @@
 
 # Bucket-List-API
 
+Front-end client repo: https://github.com/Code-Grace/bucket-list-browser-template
+Client website: https://code-grace.github.io/bucket-list-browser-template/
+
 A template for starting projects with `express` as an API. Includes
 authentication and common middlewares.
 
