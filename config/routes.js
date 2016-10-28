@@ -23,4 +23,5 @@ module.exports = require('lib/wiring/routes')
 .delete('/tasks/:id', 'tasks#destroy')
 .patch('/tasks/:id', 'tasks#update')
 .get('/tasks', 'tasks#index')
+.get('/tasks/:id', 'tasks#show')
 ;
