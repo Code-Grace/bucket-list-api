@@ -67,5 +67,5 @@ module.exports = controller({
   update,
   destroy,
 }, { before: [
-  { method: authenticate, except: ['show'] },
+  { method: authenticate },
 ], });
